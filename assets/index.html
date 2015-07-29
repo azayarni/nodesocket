@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>Doober App</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+  </head>
+
+  <body ng-controller="IndexController">
+    <div class="container">
+	  <h2>Demo App</h2>
+    
+    <div class="well">
+      Demo of realtime location updates. Implemented using node.js, mongoDB & socket.io and AngularJS. 
+      <br><strong>Howto: </strong> Open second window to see the socket communication in action! Create some drivers, relocate, remove drivers.
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-6">
+    <button class="btn btn-primary" ng-click="create()">create driver</button>
+    
+    <p ng-if="drivers.length">
+    <div ng-repeat="driver in drivers" style="margin-top: 10px;">
+      <div ng-if="driver.id">
+      <button class="btn btn-xs btn-info" ng-click="update(driver.id)">relocate</button>
+      <button class="btn btn-xs btn-danger" ng-click="remove(driver.id)">remove</button>
+      <strong>{{ driver.name }}</strong> - {{ driver.loc.long }} {{ driver.loc.lat }} </div>
+      </div>
+    </p>
+    <button class="btn btn-warning" ng-if="drivers.length > 1" ng-click="relocate()">relocate all</button>
+      </div>
+    
+    <div class="col-sm-6">
+    <div id="map-canvas" style="width: 500px; height: 400px;"></div>
+    </div>
+    </div>
+    
+    
+    </div>
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/lodash/lodash.min.js"></script>
+    
+    <script src="/js/app.js"></script>
+
+  </body>
+</html>
