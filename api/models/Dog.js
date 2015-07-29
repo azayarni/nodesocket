@@ -18,6 +18,7 @@ module.exports = {
     owner: {
       model: "owner",
       required: true
-    },
+    }
+  }
 };
 
