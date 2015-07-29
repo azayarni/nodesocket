@@ -1,8 +1,8 @@
 {
-  "name": "demo",
+  "name": "doober",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "a Node/Sails socket application",
   "keywords": [],
   "dependencies": {
     "sails": "~0.11.0",
@@ -21,16 +21,27 @@
     "grunt-contrib-uglify": "~0.4.0",
     "grunt-contrib-cssmin": "~0.9.0",
     "grunt-contrib-less": "0.11.1",
-    "grunt-contrib-coffee": "~0.10.1"
+    "grunt-contrib-coffee": "~0.10.1",
+    
+    "sails-mongo": "0.11.2",
+    "sails-hook-autoreload" : "0.11.5"
+  },
+  "devDependencies": {
+    "chai" : "2.3.0",
+    "supertest" : "1.0.1"
   },
   "scripts": {
     "start": "node app.js",
     "debug": "node debug app.js"
   },
   "main": "app.js",
+  "engines" : {
+    "node" : "0.10.36",
+    "npm": "1.4.28"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/azayarni/demo.git"
+    "url": "git://github.com/azayarni/doober.git"
   },
   "author": "azayarni",
   "license": ""
