@@ -12,6 +12,16 @@ module.exports = {
 			
 			res.send(data);
 		});
+	},
+	
+	search : function(req, res) {
+		Driver.search(req.query, function(err, data) {
+			if (err) return res.badRequest(err);
+			
+			console.log(err, data);
+			
+			res.send(data);
+		});
 	}
 };
 

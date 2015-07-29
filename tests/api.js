@@ -199,4 +199,19 @@ describe('APItests', function() {
         });
     }); 
     
+    describe('search for drivers', function() {
+
+        it('should return drivers around', function (done) {
+
+            request(sails.hooks.http.app)
+                .get('/drivers/search?long=13.3975693&lat=52.5493467&limit=1000&radius=1000').type('application/json')
+                .expect(200, function(err, res) {
+                    
+                    //console.log(err, res.body);
+
+                    done(err);
+                });
+        });
+    }); 
+    
 });

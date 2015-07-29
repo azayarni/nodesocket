@@ -34,7 +34,12 @@ module.exports.routes = {
 
   '/home': {
     view: 'homepage'
-  }
+  },
+  
+    
+  '/drivers/relocate' : 'DriverController.relocate',
+  '/drivers/subscribe' : 'DriverController.subscribe',
+  '/drivers/search' : 'DriverController.search',
 
   /***************************************************************************
   *                                                                          *
