@@ -24,7 +24,7 @@ before(function (done) {
         // Load fixtures
         done(err, sails);
         
-      }, 5000);
+      }, 1000);
   });
 });
 
